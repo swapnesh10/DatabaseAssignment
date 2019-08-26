@@ -1,0 +1,271 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 2
+Server version: 5.1.38-community MySQL Community Server (GPL)
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| account            |
+| adventureworks     |
+| ajinkya            |
+| app                |
+| app1               |
+| book29             |
+| book30             |
+| bookworm           |
+| bookwormpro        |
+| datap              |
+| datau              |
+| day2               |
+| day2assign         |
+| db4                |
+| db5                |
+| dbms               |
+| demo               |
+| devaa              |
+| emp                |
+| employee           |
+| employeee          |
+| exam               |
+| hobman             |
+| marine             |
+| mydata             |
+| mydb               |
+| mysql              |
+| neelam             |
+| nikhil             |
+| pooja              |
+| prasanna           |
+| product            |
+| project18          |
+| rita               |
+| rockstar           |
+| sahil              |
+| student            |
+| suraj              |
+| tejas              |
+| test               |
+| usha               |
+| vehicledb          |
+| vita_db            |
++--------------------+
+44 rows in set (0.75 sec)
+
+mysql> create database blue;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| account            |
+| adventureworks     |
+| ajinkya            |
+| app                |
+| app1               |
+| blue               |
+| book29             |
+| book30             |
+| bookworm           |
+| bookwormpro        |
+| datap              |
+| datau              |
+| day2               |
+| day2assign         |
+| db4                |
+| db5                |
+| dbms               |
+| demo               |
+| devaa              |
+| emp                |
+| employee           |
+| employeee          |
+| exam               |
+| hobman             |
+| marine             |
+| mydata             |
+| mydb               |
+| mysql              |
+| neelam             |
+| nikhil             |
+| pooja              |
+| prasanna           |
+| product            |
+| project18          |
+| rita               |
+| rockstar           |
+| sahil              |
+| student            |
+| suraj              |
+| tejas              |
+| test               |
+| usha               |
+| vehicledb          |
+| vita_db            |
++--------------------+
+45 rows in set (0.00 sec)
+
+mysql> use blue
+Database changed
+mysql> use blue;
+Database changed
+mysql> create table yelo;
+ERROR 1113 (42000): A table must have at least 1 column
+mysql> create table yelo
+    -> (product_id int, name varchar(20));
+Query OK, 0 rows affected (0.11 sec)
+
+mysql> insert into yelo values(1,'red');(2,'white');(3,'black');
+Query OK, 1 row affected (0.06 sec)
+
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that
+corresponds to your MySQL server version for the right syntax to use near '2,'wh
+ite')' at line 1
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that
+corresponds to your MySQL server version for the right syntax to use near '3,'bl
+ack')' at line 1
+mysql> insert into yelo values(1,'red');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into yelo values(2,'black');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into yelo values(3,'white');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into yelo values(4,'grey');
+Query OK, 1 row affected (0.09 sec)
+
+mysql> select *from yelo;
++------------+-------+
+| product_id | name  |
++------------+-------+
+|          1 | red   |
+|          1 | red   |
+|          2 | black |
+|          3 | white |
+|          4 | grey  |
++------------+-------+
+5 rows in set (0.00 sec)
+
+mysql> select * from yelo;
++------------+-------+
+| product_id | name  |
++------------+-------+
+|          1 | red   |
+|          1 | red   |
+|          2 | black |
+|          3 | white |
+|          4 | grey  |
++------------+-------+
+5 rows in set (0.00 sec)
+
+mysql> update yelo
+    -> set name='grey'
+    -> set name='pink'
+    -> where product_id=4;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that
+corresponds to your MySQL server version for the right syntax to use near 'set n
+ame='pink'
+where product_id=4' at line 3
+mysql> set name='pink'
+    -> exit;
+ERROR 1193 (HY000): Unknown system variable 'name'
+mysql> update yelo
+    -> set name='maroon'
+    -> where product_id=1;
+Query OK, 2 rows affected (0.06 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> select *from yelo;
++------------+--------+
+| product_id | name   |
++------------+--------+
+|          1 | maroon |
+|          1 | maroon |
+|          2 | black  |
+|          3 | white  |
+|          4 | grey   |
++------------+--------+
+5 rows in set (0.00 sec)
+
+mysql> delete from yelo
+    -> where product_id=1;
+Query OK, 2 rows affected (0.05 sec)
+
+mysql> select *from yelo;
++------------+-------+
+| product_id | name  |
++------------+-------+
+|          2 | black |
+|          3 | white |
+|          4 | grey  |
++------------+-------+
+3 rows in set (0.00 sec)
+
+mysql> truncate table yelo;
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> select *from yelo;
+Empty set (0.00 sec)
+
+mysql> drop table yelo;
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> select *from yelo;
+ERROR 1146 (42S02): Table 'blue.yelo' doesn't exist
+mysql>
+
+
+
+//Primary key:
+
+
+
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 3
+Server version: 5.1.38-community MySQL Community Server (GPL)
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use database blue;
+ERROR 1049 (42000): Unknown database 'database'
+mysql> use blue;
+Database changed
+mysql> create table employee(id int,name varchar(20),salary int,primary key(id))
+;
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> insert into employee values(100,'Leena',10000);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into employee values(101,'Issac',20000);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into employee values(102,'Cook',50000);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into employee values(102,'Brook',60000);
+ERROR 1062 (23000): Duplicate entry '102' for key 'PRIMARY'
+mysql> insert into employee values(103,'Brook',60000);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from employee;
++-----+-------+--------+
+| id  | name  | salary |
++-----+-------+--------+
+| 100 | Leena |  10000 |
+| 101 | Issac |  20000 |
+| 102 | Cook  |  50000 |
+| 103 | Brook |  60000 |
++-----+-------+--------+
+4 rows in set (0.00 sec)
+
+mysql>
